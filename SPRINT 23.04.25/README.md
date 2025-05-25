@@ -1,25 +1,10 @@
-# Getting Started
+# 🌀 Sprint 2 – Core System Foundation
 
-### Reference Documentation
-For further reference, please consider the following sections:
+In this sprint, we built the initial backend structure of our smart indoor air quality monitoring system using Spring Boot and RESTful APIs. All data is managed in-memory using Java Collections, aligned with the project's early-stage architecture.
+We implemented full CRUD support for Users, Objects (such as sensors), and Commands, using modular separation between controllers, services, and entities.
+Data boundaries strictly follow the given specification to ensure seamless JSON serialization and client-server integration.
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.3/gradle-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.3/gradle-plugin/packaging-oci-image.html)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.4.3/reference/using/devtools.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.3/reference/web/servlet.html)
-* [Storing Data in memory using Key-Value Repository](https://docs.spring.io/spring-data/keyvalue/reference/)
+System logic is intentionally minimal at this phase — focusing on storing, retrieving, updating, and deleting resources — with server-controlled fields like systemId, timestamps, and IDs automatically generated and protected.
+Additionally, we established Admin APIs for system reset and laid the groundwork for future features like sensor integration, real-time alerts, and UI interaction.
 
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-
-### Additional Links
-These additional references should also help you:
-
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
-* [Spring Data KeyValue Project at GitHub](https://github.com/spring-projects/spring-data-keyvalue)
-
+This sprint sets the foundation for future development phases, prioritizing clean architecture, maintainability, and flexibility
