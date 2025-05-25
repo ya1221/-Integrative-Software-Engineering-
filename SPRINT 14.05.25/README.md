@@ -1,25 +1,23 @@
-# Getting Started
+🛠️ Sprint 3 – Persistent Data & Database Integration
 
-### Reference Documentation
-For further reference, please consider the following sections:
+In Sprint 3, we transitioned from in-memory data management to a persistent PostgreSQL database using Docker. We restructured the project to follow a strict layered architecture based on the closed-layer model, separating Controllers, Services (Business Logic), and a dedicated Data Access Layer (DAL). All entities are now stored in the database using JPA entities, with full compliance to the specifications.
 
-* [Official Gradle documentation](https://docs.gradle.org)
-* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.3/gradle-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.3/gradle-plugin/packaging-oci-image.html)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.4.3/reference/using/devtools.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.3/reference/web/servlet.html)
-* [Storing Data in memory using Key-Value Repository](https://docs.spring.io/spring-data/keyvalue/reference/)
+Key updates:
 
-### Guides
-The following guides illustrate how to use some features concretely:
+    PostgreSQL integration via Docker Compose with Spring Data JPA
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+    Business logic services now include transaction support and input validation
 
-### Additional Links
-These additional references should also help you:
+    DAL layer abstracts all database operations using repository interfaces
 
-* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
-* [Spring Data KeyValue Project at GitHub](https://github.com/spring-projects/spring-data-keyvalue)
+    Validation improvements: email format, non-null fields, valid roles (ADMIN, OPERATOR, END_USER)
 
+    Immutable fields protected in PUT operations (e.g., systemId, creation timestamp, creators)
+
+    Implemented object-to-object relationships and new REST endpoints for managing links
+
+    Error handling with proper HTTP status codes (400, 404, 403, 401)
+
+    Ready for future additions: security layer, automation logic, and real-time data visualization
+
+This sprint marked a critical infrastructure milestone, ensuring persistent storage, transactional consistency, and a scalable base for upcoming automation and authentication features.
