@@ -1,4 +1,4 @@
-🛠️ Sprint 3 – Persistent Data & Database Integration
+# 🛠️ Sprint 3 – Persistent Data & Database Integration
 
 In Sprint 3, we transitioned from in-memory data management to a persistent PostgreSQL database using Docker. We restructured the project to follow a strict layered architecture based on the closed-layer model, separating Controllers, Services (Business Logic), and a dedicated Data Access Layer (DAL). All entities are now stored in the database using JPA entities, with full compliance to the specifications.
 
