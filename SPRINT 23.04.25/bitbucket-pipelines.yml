@@ -1,0 +1,27 @@
+image: gradle:8.4-jdk21
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test Spring Boot App
+        caches:
+          - gradle
+        script:
+          - ./gradlew clean build
+        artifacts:
+          - build/libs/**/*.jar
+
+    - step:
+        name: Build Docker Image
+        services:
+          - docker
+        script:
+          - docker build -t itay3711/my-spring-app .
+
+    - step:
+        name: Push Docker Image to Docker Hub
+        services:
+          - docker
+        script:
+          - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+          - docker push itay3711/my-spring-app
